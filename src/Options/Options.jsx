@@ -1,6 +1,6 @@
-import { FeedbackBtns, FeedbackButton } from "./FeadbackOptions.styled"
+import { FeedbackBtns, FeedbackButton } from "./Options.styled"
 
-export const Options = ({options, updateFeedback }) => {
+const Options = ({options, updateFeedback }) => {
     return (
         <FeedbackBtns>
          {options.map(option => (
@@ -9,3 +9,5 @@ export const Options = ({options, updateFeedback }) => {
         </FeedbackBtns>
     )
 }
+
+export default Options

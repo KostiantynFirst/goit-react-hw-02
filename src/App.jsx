@@ -1,10 +1,12 @@
 import { useState } from "react";
-import { Container, FeedbackLabel, FeedbackHeading } from "./App.styled";
-import { Options } from "./Options/Options";
-import { Feadback } from "./Feadback/Feadback";
-import { Notification } from "components/Notification/Notification";
+import { Container } from "./App.styled";
+import Options from "./Options/Options"
+import Feadback from './Feadback/Feadback'
+import Notification from "./Notification/Notification";
+import Description from './Description/Description'
 
-export const App = () => {
+
+const App = () => {
 
   const [good, setGood] = useState(0);
   const [neutral, setNeutral] = useState(0);
@@ -29,9 +31,7 @@ export const App = () => {
 
     return (
       <Container>
-      <FeedbackLabel>
-          <FeedbackHeading>Please leave feedback</FeedbackHeading>
-      </FeedbackLabel>
+        <Description />
       
     <Options options={['good', 'neutral', 'bad']} updateFeedback ={updateFeedback }/>
 
@@ -53,3 +53,5 @@ export const App = () => {
   );  
 
 }
+
+export default App

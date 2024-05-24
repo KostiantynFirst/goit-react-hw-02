@@ -1,6 +1,6 @@
-import { FeedbackGood, FeedbacknNeutral, FeedbackBad, FeedbackTotal, FeedbackPositive, StatisticsSection, StatisticsHeading, FeedbackContent, FeedbackContentHeading } from "./Statistics.styled"
+import { FeedbackGood, FeedbacknNeutral, FeedbackBad, FeedbackTotal, FeedbackPositive, StatisticsSection, StatisticsHeading, FeedbackContent, FeedbackContentHeading } from "./Feadback.styled"
 
-export const Feadback = ({good, neutral, bad }) => {
+const Feadback = ({good, neutral, bad }) => {
 
   const total = good + neutral + bad;
   const positiveFeedback =
@@ -31,3 +31,5 @@ export const Feadback = ({good, neutral, bad }) => {
     )
 
 }
+
+export default Feadback
