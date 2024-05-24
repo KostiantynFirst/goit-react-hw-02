@@ -1,8 +1,8 @@
 import { FeedbackGood, FeedbacknNeutral, FeedbackBad, FeedbackTotal, FeedbackPositive, StatisticsSection, StatisticsHeading, FeedbackContent, FeedbackContentHeading } from "./Feadback.styled"
 
-const Feadback = ({good, neutral, bad }) => {
+const Feadback = ({good, neutral, bad, total }) => {
 
-  const total = good + neutral + bad;
+  // const total = good + neutral + bad;
   const positiveFeedback =
     total === 0 ? 0 : Math.round((good / total) * 100);
 
