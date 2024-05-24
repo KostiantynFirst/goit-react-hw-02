@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Container } from "./App.styled";
 import Options from "./Options/Options"
 import Feadback from './Feadback/Feadback'
@@ -8,9 +8,36 @@ import Description from './Description/Description'
 
 const App = () => {
 
-  const [good, setGood] = useState(0);
-  const [neutral, setNeutral] = useState(0);
-  const [bad, setBad] = useState(0);
+  const [good, setGood] = useState(() => {
+    const savedGood = Number(window.localStorage.getItem("saved-good"));
+    if (savedGood !== null) {
+      return savedGood;
+    } 
+    return 0;
+  });
+
+    const [neutral, setNeutral] = useState(() => {
+    const savedNeutral = Number(window.localStorage.getItem("saved-neutral"));
+    if (savedNeutral !== null) {
+      return savedNeutral;
+    } 
+    return 0;
+    });
+  
+    const [bad, setBad] = useState(() => {
+    const savedBad = Number(window.localStorage.getItem("saved-bad"));
+    if (savedBad !== null) {
+      return savedBad;
+    } 
+    return 0;
+  });
+
+useEffect(() => {
+    window.localStorage.setItem("saved-good", good);
+    window.localStorage.setItem("saved-neutral", neutral);
+    window.localStorage.setItem("saved-bad", bad);
+  }, [good, neutral, bad]);
+
 
   const total = good + neutral + bad;
  
