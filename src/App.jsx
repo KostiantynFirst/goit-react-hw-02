@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { Container } from "./App.styled";
-import Options from "./Options/Options"
-import Feadback from './Feadback/Feadback'
-import Notification from "./Notification/Notification";
-import Description from './Description/Description'
+import Options from "./components/Options/Options"
+import Feadback from './components/Feadback/Feadback'
+import Notification from "./components/Notification/Notification";
+import Description from './components/Description/Description'
 
 
 const App = () => {
