@@ -1,10 +1,9 @@
-import { FeedbackGood, FeedbacknNeutral, FeedbackBad, FeedbackTotal, FeedbackPositive, StatisticsSection, StatisticsHeading, FeedbackContent, FeedbackContentHeading } from "./Feadback.styled"
+import { FeedbackGood, FeedbacknNeutral, FeedbackBad, FeedbackTotal, FeedbackPositive, StatisticsSection, StatisticsHeading, FeedbackContent, FeedbackContentHeading } from "./Feedback.styled"
 
-const Feadback = ({good, neutral, bad, total }) => {
+const Feedback = ({good, neutral, bad, total, positiveFeedback }) => {
 
-  // const total = good + neutral + bad;
-  const positiveFeedback =
-    total === 0 ? 0 : Math.round((good / total) * 100);
+  // const positiveFeedback =
+  //   total === 0 ? 0 : Math.round((good / total) * 100);
 
     return (
         <StatisticsSection>
@@ -32,4 +31,4 @@ const Feadback = ({good, neutral, bad, total }) => {
 
 }
 
-export default Feadback
+export default Feedback

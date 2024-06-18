@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Container } from "./App.styled";
 import Options from "./components/Options/Options"
-import Feadback from './components/Feadback/Feadback'
+import Feedback from './components/Feedback/Feedback'
 import Notification from "./components/Notification/Notification";
 import Description from './components/Description/Description'
 
@@ -40,6 +40,7 @@ useEffect(() => {
 
 
   const total = good + neutral + bad;
+  const positiveFeedback = total === 0 ? 0 : Math.round((good / total) * 100);
  
   const  updateFeedback  = option => {
       switch (option) {
@@ -71,11 +72,13 @@ useEffect(() => {
     <Options options={['good', 'neutral', 'bad']} resetFeedback={resetFeedback} updateFeedback={updateFeedback} total={total}/>
 
     { total > 0 ?  
-        <Feadback
+        <Feedback
           good={good}
           neutral={neutral}
           bad={bad} 
-          total={total}/> 
+          total={total}
+          positiveFeedback={positiveFeedback}
+          /> 
           :
         <Notification
           message="There is no feedback" 
@@ -89,4 +92,4 @@ useEffect(() => {
 
 }
 
-export default App
+export default App;
